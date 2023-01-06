@@ -121,6 +121,12 @@ int             wait(void);
 void            wakeup(void*);
 void            yield(void);
 
+// Changes begin
+int sem_init(int, int);
+int sem_acquire(int);
+int sem_release(int);
+// Changes end
+
 // swtch.S
 void            swtch(struct context**, struct context*);
 

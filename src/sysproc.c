@@ -89,3 +89,24 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// Changes begin
+int sys_sem_init(void) {
+    int i, v;
+    argint(0, &i);
+    argint(1, &v);
+    return sem_init(i, v);
+}
+
+int sys_sem_acquire(void) {
+    int i;
+    argint(0, &i);
+    return sem_acquire(i);
+}
+
+int sys_sem_release(void) {
+    int i;
+    argint(0, &i);
+    return sem_release(i);
+}
+// Changes end

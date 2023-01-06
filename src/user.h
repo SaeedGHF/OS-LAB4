@@ -24,6 +24,12 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 
+// Changes begin
+int sem_init(int i, int v);
+int sem_acquire(int i);
+int sem_release(int i);
+// Changes end
+
 // ulib.c
 int stat(const char*, struct stat*);
 char* strcpy(char*, const char*);
