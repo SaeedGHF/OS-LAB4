@@ -104,6 +104,12 @@ extern int sys_wait(void);
 extern int sys_write(void);
 extern int sys_uptime(void);
 
+// Changes begin
+extern int sys_sem_init(void);
+extern int sys_sem_acquire(void);
+extern int sys_sem_release(void);
+// Changes end
+
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
 [SYS_exit]    sys_exit,
@@ -126,6 +132,10 @@ static int (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+
+[SYS_sem_init] sys_sem_init,
+[SYS_sem_acquire] sys_sem_acquire,
+[SYS_sem_release] sys_sem_release
 };
 
 void
